@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Human_ResourcesModelStoreContainer" CdmEntityContainer="Human_ResourcesEntities">
+    <EntitySetMapping Name="Claim_Ruling_Type">
+      <EntityTypeMapping TypeName="Human_ResourcesModel.Claim_Ruling_Type">
+        <MappingFragment StoreEntitySet="Claim_Ruling_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Claim_Ruling_Type1" ColumnName="Claim_Ruling_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="Human_ResourcesModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="First_Name" ColumnName="First_Name" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FMLA_Absence_Tracking_Type">
+      <EntityTypeMapping TypeName="Human_ResourcesModel.FMLA_Absence_Tracking_Type">
+        <MappingFragment StoreEntitySet="FMLA_Absence_Tracking_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FMLA_Absence_Tracking_Type1" ColumnName="FMLA_Absence_Tracking_Type" />
+          <ScalarProperty Name="Hours" ColumnName="Hours" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FMLA_Leave_Type">
+      <EntityTypeMapping TypeName="Human_ResourcesModel.FMLA_Leave_Type">
+        <MappingFragment StoreEntitySet="FMLA_Leave_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FMLA_Leave_Type1" ColumnName="FMLA_Leave_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FMLA_PLA_Tracking">
+      <EntityTypeMapping TypeName="Human_ResourcesModel.FMLA_PLA_Tracking">
+        <MappingFragment StoreEntitySet="FMLA_PLA_Tracking">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Org_Number" ColumnName="Org_Number" />
+          <ScalarProperty Name="Division_District" ColumnName="Division/District" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FMLA_Absence_Tracking_TypeID" ColumnName="FMLA_Absence_Tracking_TypeID" />
+          <ScalarProperty Name="Beginning_Balance" ColumnName="Beginning_Balance" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Hours_Used" ColumnName="Hours_Used" />
+          <ScalarProperty Name="Ending_Balance" ColumnName="Ending_Balance" />
+          <ScalarProperty Name="Exhausted" ColumnName="Exhausted" />
+          <ScalarProperty Name="FMLA_Leave_TypeID" ColumnName="FMLA_Leave_TypeID" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Injury_Leave">
+      <EntityTypeMapping TypeName="Human_ResourcesModel.Injury_Leave">
+        <MappingFragment StoreEntitySet="Injury_Leave">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Org_Number" ColumnName="Org_Number" />
+          <ScalarProperty Name="Division_District" ColumnName="Division/District" />
+          <ScalarProperty Name="TTD_TypeID" ColumnName="TTD_TypeID" />
+          <ScalarProperty Name="Medical_Excuse_To" ColumnName="Medical_Excuse_To" />
+          <ScalarProperty Name="Doctor" ColumnName="Doctor" />
+          <ScalarProperty Name="DR_Fax_1" ColumnName="DR_Fax_1" />
+          <ScalarProperty Name="DR_Fax_2" ColumnName="DR_Fax_2" />
+          <ScalarProperty Name="PT_Fax" ColumnName="PT_Fax" />
+          <ScalarProperty Name="Claim_Number" ColumnName="Claim_Number" />
+          <ScalarProperty Name="Injury_Date" ColumnName="Injury_Date" />
+          <ScalarProperty Name="RTW_Date" ColumnName="RTW_Date" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TTD_Type">
+      <EntityTypeMapping TypeName="Human_ResourcesModel.TTD_Type">
+        <MappingFragment StoreEntitySet="TTD_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TTD_Type1" ColumnName="TTD_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WC_Type">
+      <EntityTypeMapping TypeName="Human_ResourcesModel.WC_Type">
+        <MappingFragment StoreEntitySet="WC_Type">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="WC_Type1" ColumnName="WC_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Workers_Compensation">
+      <EntityTypeMapping TypeName="Human_ResourcesModel.Workers_Compensation">
+        <MappingFragment StoreEntitySet="Workers_Compensation">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Org_Number" ColumnName="Org_Number" />
+          <ScalarProperty Name="Division_District" ColumnName="Division/District" />
+          <ScalarProperty Name="WC_TypeID" ColumnName="WC_TypeID" />
+          <ScalarProperty Name="Injury_Date" ColumnName="Injury_Date" />
+          <ScalarProperty Name="Claim_Number" ColumnName="Claim_Number" />
+          <ScalarProperty Name="Injury_Type" ColumnName="Injury_Type" />
+          <ScalarProperty Name="Body_Parts" ColumnName="Body_Parts" />
+          <ScalarProperty Name="Job_Class" ColumnName="Job_Class" />
+          <ScalarProperty Name="Tx_Date" ColumnName="Tx_Date" />
+          <ScalarProperty Name="EROI_Date" ColumnName="EROI_Date" />
+          <ScalarProperty Name="Tx_EROI_LAG" ColumnName="Tx_EROI_LAG" />
+          <ScalarProperty Name="Claim_Ruling_TypeID" ColumnName="Claim_Ruling_TypeID" />
+          <ScalarProperty Name="Claim_Ruling_Date" ColumnName="Claim_Ruling_Date" />
+          <ScalarProperty Name="TTD_ONSET_Date" ColumnName="TTD_ONSET_Date" />
+          <ScalarProperty Name="Restricted_RTW" ColumnName="Restricted_RTW" />
+          <ScalarProperty Name="Full_Duty_RTW" ColumnName="Full_Duty_RTW" />
+          <ScalarProperty Name="TTD_Award_Notice" ColumnName="TTD_Award_Notice" />
+          <ScalarProperty Name="RTW_Notice" ColumnName="RTW_Notice" />
+          <ScalarProperty Name="Lost_Time" ColumnName="Lost_Time" />
+          <ScalarProperty Name="Lost_Time_Year" ColumnName="Lost_Time_Year" />
+          <ScalarProperty Name="MVA" ColumnName="MVA" />
+          <ScalarProperty Name="H_EQ" ColumnName="H_EQ" />
+          <ScalarProperty Name="Tree_Brush" ColumnName="Tree/Brush" />
+          <ScalarProperty Name="CTS" ColumnName="CTS" />
+          <ScalarProperty Name="HL" ColumnName="HL" />
+          <ScalarProperty Name="OP" ColumnName="OP" />
+          <ScalarProperty Name="OD_NOC" ColumnName="OD_NOC" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

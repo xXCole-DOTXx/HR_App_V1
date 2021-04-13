@@ -1,0 +1,256 @@
+﻿@model HR_App_V1.Models.Workers_Compensation
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Workers_Compensation</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Org_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Org_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Division_District)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Division_District)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Injury_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Injury_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Claim_Number)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Claim_Number)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Injury_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Injury_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Body_Parts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Body_Parts)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Job_Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Job_Class)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tx_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tx_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EROI_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EROI_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tx_EROI_LAG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tx_EROI_LAG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Claim_Ruling_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Claim_Ruling_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TTD_ONSET_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTD_ONSET_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Restricted_RTW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Restricted_RTW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Full_Duty_RTW)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Full_Duty_RTW)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TTD_Award_Notice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TTD_Award_Notice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RTW_Notice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RTW_Notice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lost_Time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lost_Time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lost_Time_Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lost_Time_Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MVA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MVA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.H_EQ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.H_EQ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tree_Brush)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tree_Brush)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CTS)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CTS)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_NOC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_NOC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Claim_Ruling_Type.Claim_Ruling_Type1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Claim_Ruling_Type.Claim_Ruling_Type1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WC_Type.WC_Type1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WC_Type.WC_Type1)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

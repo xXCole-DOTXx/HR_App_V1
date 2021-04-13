@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c00b07dedeb44b57ad4045b51141458a" Name="Diagram1">
+        <EntityTypeShape EntityType="Human_ResourcesModel.Claim_Ruling_Type" Width="1.5" PointX="6.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Human_ResourcesModel.Employee" Width="1.5" PointX="0.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Human_ResourcesModel.FMLA_Absence_Tracking_Type" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Human_ResourcesModel.FMLA_Leave_Type" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Human_ResourcesModel.FMLA_PLA_Tracking" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Human_ResourcesModel.Injury_Leave" Width="1.5" PointX="6" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Human_ResourcesModel.TTD_Type" Width="1.5" PointX="3.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Human_ResourcesModel.WC_Type" Width="1.5" PointX="6.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Human_ResourcesModel.Workers_Compensation" Width="1.5" PointX="9" PointY="6.625" IsExpanded="true" />
+        <AssociationConnector Association="Human_ResourcesModel.FK_Workers_Compensation_Claim_Ruling_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Human_ResourcesModel.FK_FMLA_PLA_Tracking_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Human_ResourcesModel.FK_Injury_Leave_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Human_ResourcesModel.FK_Workers_Compensation_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Human_ResourcesModel.FK_FMLA_PLA_Tracking_FMLA_Absence_Tracking_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Human_ResourcesModel.FK_FMLA_PLA_Tracking_FMLA_Leave_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Human_ResourcesModel.FK_Injury_Leave_TTD_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="Human_ResourcesModel.FK_Workers_Compensation_WC_Type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

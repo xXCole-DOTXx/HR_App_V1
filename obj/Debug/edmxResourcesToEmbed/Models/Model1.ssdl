@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Human_ResourcesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Claim_Ruling_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Claim_Ruling_Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="First_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FMLA_Absence_Tracking_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FMLA_Absence_Tracking_Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Hours" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FMLA_Leave_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FMLA_Leave_Type" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FMLA_PLA_Tracking">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="Org_Number" Type="int" Nullable="false" />
+    <Property Name="Division/District" Type="nvarchar" MaxLength="25" />
+    <Property Name="Address" Type="nvarchar" MaxLength="30" />
+    <Property Name="FMLA_Absence_Tracking_TypeID" Type="int" Nullable="false" />
+    <Property Name="Beginning_Balance" Type="int" Nullable="false" />
+    <Property Name="Start_Date" Type="datetime" Nullable="false" />
+    <Property Name="End_Date" Type="datetime" />
+    <Property Name="Hours_Used" Type="int" />
+    <Property Name="Ending_Balance" Type="int" />
+    <Property Name="Exhausted" Type="int" />
+    <Property Name="FMLA_Leave_TypeID" Type="int" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Injury_Leave">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="Org_Number" Type="int" Nullable="false" />
+    <Property Name="Division/District" Type="nvarchar" MaxLength="25" />
+    <Property Name="TTD_TypeID" Type="int" Nullable="false" />
+    <Property Name="Medical_Excuse_To" Type="datetime" Nullable="false" />
+    <Property Name="Doctor" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DR_Fax_1" Type="datetime" />
+    <Property Name="DR_Fax_2" Type="datetime" />
+    <Property Name="PT_Fax" Type="datetime" />
+    <Property Name="Claim_Number" Type="int" Nullable="false" />
+    <Property Name="Injury_Date" Type="datetime" Nullable="false" />
+    <Property Name="RTW_Date" Type="datetime" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TTD_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TTD_Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WC_Type">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WC_Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Workers_Compensation">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="Org_Number" Type="int" Nullable="false" />
+    <Property Name="Division/District" Type="nvarchar" MaxLength="25" />
+    <Property Name="WC_TypeID" Type="int" Nullable="false" />
+    <Property Name="Injury_Date" Type="datetime" Nullable="false" />
+    <Property Name="Claim_Number" Type="int" Nullable="false" />
+    <Property Name="Injury_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Body_Parts" Type="nvarchar" MaxLength="50" />
+    <Property Name="Job_Class" Type="nvarchar" MaxLength="50" />
+    <Property Name="Tx_Date" Type="datetime" Nullable="false" />
+    <Property Name="EROI_Date" Type="datetime" Nullable="false" />
+    <Property Name="Tx_EROI_LAG" Type="int" Nullable="false" />
+    <Property Name="Claim_Ruling_TypeID" Type="int" Nullable="false" />
+    <Property Name="Claim_Ruling_Date" Type="datetime" />
+    <Property Name="TTD_ONSET_Date" Type="nvarchar" MaxLength="50" />
+    <Property Name="Restricted_RTW" Type="datetime" />
+    <Property Name="Full_Duty_RTW" Type="datetime" />
+    <Property Name="TTD_Award_Notice" Type="nvarchar" MaxLength="50" />
+    <Property Name="RTW_Notice" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lost_Time" Type="nvarchar" MaxLength="50" />
+    <Property Name="Lost_Time_Year" Type="int" />
+    <Property Name="MVA" Type="bit" />
+    <Property Name="H_EQ" Type="bit" />
+    <Property Name="Tree/Brush" Type="bit" />
+    <Property Name="CTS" Type="bit" />
+    <Property Name="HL" Type="bit" />
+    <Property Name="OP" Type="bit" />
+    <Property Name="OD_NOC" Type="bit" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <Association Name="FK_FMLA_PLA_Tracking_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="FMLA_PLA_Tracking" Type="Self.FMLA_PLA_Tracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FMLA_PLA_Tracking">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FMLA_PLA_Tracking_FMLA_Absence_Tracking_Type">
+    <End Role="FMLA_Absence_Tracking_Type" Type="Self.FMLA_Absence_Tracking_Type" Multiplicity="1" />
+    <End Role="FMLA_PLA_Tracking" Type="Self.FMLA_PLA_Tracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FMLA_Absence_Tracking_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FMLA_PLA_Tracking">
+        <PropertyRef Name="FMLA_Absence_Tracking_TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FMLA_PLA_Tracking_FMLA_Leave_Type">
+    <End Role="FMLA_Leave_Type" Type="Self.FMLA_Leave_Type" Multiplicity="0..1" />
+    <End Role="FMLA_PLA_Tracking" Type="Self.FMLA_PLA_Tracking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FMLA_Leave_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FMLA_PLA_Tracking">
+        <PropertyRef Name="FMLA_Leave_TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Injury_Leave_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Injury_Leave" Type="Self.Injury_Leave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Injury_Leave">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Injury_Leave_TTD_Type">
+    <End Role="TTD_Type" Type="Self.TTD_Type" Multiplicity="1" />
+    <End Role="Injury_Leave" Type="Self.Injury_Leave" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TTD_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Injury_Leave">
+        <PropertyRef Name="TTD_TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_Compensation_Claim_Ruling_Type">
+    <End Role="Claim_Ruling_Type" Type="Self.Claim_Ruling_Type" Multiplicity="1" />
+    <End Role="Workers_Compensation" Type="Self.Workers_Compensation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Claim_Ruling_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Workers_Compensation">
+        <PropertyRef Name="Claim_Ruling_TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_Compensation_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Workers_Compensation" Type="Self.Workers_Compensation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Workers_Compensation">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Workers_Compensation_WC_Type">
+    <End Role="WC_Type" Type="Self.WC_Type" Multiplicity="1" />
+    <End Role="Workers_Compensation" Type="Self.Workers_Compensation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WC_Type">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Workers_Compensation">
+        <PropertyRef Name="WC_TypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Human_ResourcesModelStoreContainer">
+    <EntitySet Name="Claim_Ruling_Type" EntityType="Self.Claim_Ruling_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FMLA_Absence_Tracking_Type" EntityType="Self.FMLA_Absence_Tracking_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FMLA_Leave_Type" EntityType="Self.FMLA_Leave_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FMLA_PLA_Tracking" EntityType="Self.FMLA_PLA_Tracking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Injury_Leave" EntityType="Self.Injury_Leave" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TTD_Type" EntityType="Self.TTD_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WC_Type" EntityType="Self.WC_Type" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Workers_Compensation" EntityType="Self.Workers_Compensation" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_FMLA_PLA_Tracking_Employee" Association="Self.FK_FMLA_PLA_Tracking_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="FMLA_PLA_Tracking" EntitySet="FMLA_PLA_Tracking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FMLA_PLA_Tracking_FMLA_Absence_Tracking_Type" Association="Self.FK_FMLA_PLA_Tracking_FMLA_Absence_Tracking_Type">
+      <End Role="FMLA_Absence_Tracking_Type" EntitySet="FMLA_Absence_Tracking_Type" />
+      <End Role="FMLA_PLA_Tracking" EntitySet="FMLA_PLA_Tracking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FMLA_PLA_Tracking_FMLA_Leave_Type" Association="Self.FK_FMLA_PLA_Tracking_FMLA_Leave_Type">
+      <End Role="FMLA_Leave_Type" EntitySet="FMLA_Leave_Type" />
+      <End Role="FMLA_PLA_Tracking" EntitySet="FMLA_PLA_Tracking" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Injury_Leave_Employee" Association="Self.FK_Injury_Leave_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Injury_Leave" EntitySet="Injury_Leave" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Injury_Leave_TTD_Type" Association="Self.FK_Injury_Leave_TTD_Type">
+      <End Role="TTD_Type" EntitySet="TTD_Type" />
+      <End Role="Injury_Leave" EntitySet="Injury_Leave" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_Compensation_Claim_Ruling_Type" Association="Self.FK_Workers_Compensation_Claim_Ruling_Type">
+      <End Role="Claim_Ruling_Type" EntitySet="Claim_Ruling_Type" />
+      <End Role="Workers_Compensation" EntitySet="Workers_Compensation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_Compensation_Employee" Association="Self.FK_Workers_Compensation_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Workers_Compensation" EntitySet="Workers_Compensation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Workers_Compensation_WC_Type" Association="Self.FK_Workers_Compensation_WC_Type">
+      <End Role="WC_Type" EntitySet="WC_Type" />
+      <End Role="Workers_Compensation" EntitySet="Workers_Compensation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
