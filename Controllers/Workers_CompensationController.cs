@@ -21,6 +21,12 @@ namespace HR_App_V1.Controllers
             return View(workers_Compensation.ToList());
         }
 
+        // GET: Employees
+        public ActionResult EmployeeSelect()
+        {
+            return View(db.Employees.ToList());
+        }
+
         // GET: Workers_Compensation/Details/5
         public ActionResult Details(int? id)
         {
@@ -37,10 +43,23 @@ namespace HR_App_V1.Controllers
         }
 
         // GET: Workers_Compensation/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
+
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Employee employee = db.Employees.Find(id);
+            if (employee == null)
+            {
+                return HttpNotFound();
+            }
+            System.Diagnostics.Debug.WriteLine("Employee name: " + employee.First_Name);
             ViewBag.Claim_Ruling_TypeID = new SelectList(db.Claim_Ruling_Type, "ID", "Claim_Ruling_Type1");
-            ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "First_Name");
+            ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "ID");
+            ViewBag.fName = new SelectList(db.Employees, "First_Name", "First_Name");
+            ViewBag.lName = new SelectList(db.Employees, "Last_Name", "Last_Name");
             ViewBag.WC_TypeID = new SelectList(db.WC_Type, "ID", "WC_Type1");
             return View();
         }
@@ -50,7 +69,7 @@ namespace HR_App_V1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,EmployeeID,Org_Number,Division_District,WC_TypeID,Injury_Date,Claim_Number,Injury_Type,Body_Parts,Job_Class,Tx_Date,EROI_Date,Tx_EROI_LAG,Claim_Ruling_TypeID,Claim_Ruling_Date,TTD_ONSET_Date,Restricted_RTW,Full_Duty_RTW,TTD_Award_Notice,RTW_Notice,Lost_Time,Lost_Time_Year,MVA,H_EQ,Tree_Brush,CTS,HL,OP,OD_NOC,Comments")] Workers_Compensation workers_Compensation)
+        public ActionResult Create([Bind(Include = "ID,EmployeeID,Org_Number,Division_District,WC_TypeID,Injury_Date,Claim_Number,Injury_Type,Body_Parts,Comments")] Workers_Compensation workers_Compensation)
         {
             if (ModelState.IsValid)
             {

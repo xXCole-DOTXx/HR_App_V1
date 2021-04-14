@@ -20,6 +20,12 @@ namespace HR_App_V1.Controllers
             return View(db.Employees.ToList());
         }
 
+        // GET: Employees
+        public ActionResult EmployeeSelect()
+        {
+            return View(db.Employees.ToList());
+        }
+
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {

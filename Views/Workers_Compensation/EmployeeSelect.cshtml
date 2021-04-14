@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<HR_App_V1.Models.Employee>
 
 @{
-    ViewBag.Title = "EmployeeSelect";
+    ViewBag.Title = "Employee Select";
 }
 
 <h2>EmployeeSelect</h2>
@@ -27,7 +27,7 @@
                 @Html.DisplayFor(modelItem => item.Last_Name)
             </td>
             <td>
-                @Html.ActionLink("Select", "Select", new { id = item.ID }) 
+                @Html.ActionLink("Select", "Create", new { id = item.ID }) 
             </td>
         </tr>
     }
