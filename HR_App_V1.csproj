@@ -236,12 +236,12 @@
     <Content Include="Views\Employees\Details.cshtml" />
     <Content Include="Views\Employees\Edit.cshtml" />
     <Content Include="Views\Employees\Index.cshtml" />
-    <Content Include="Views\Workers_Compensation\Create.cshtml" />
     <Content Include="Views\Workers_Compensation\Delete.cshtml" />
     <Content Include="Views\Workers_Compensation\Details.cshtml" />
     <Content Include="Views\Workers_Compensation\Edit.cshtml" />
     <Content Include="Views\Workers_Compensation\Index.cshtml" />
     <Content Include="Views\Workers_Compensation\EmployeeSelect.cshtml" />
+    <Content Include="Views\Workers_Compensation\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

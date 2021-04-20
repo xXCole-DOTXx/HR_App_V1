@@ -92,13 +92,13 @@
     <Property Name="Division/District" Type="nvarchar" MaxLength="25" />
     <Property Name="WC_TypeID" Type="int" Nullable="false" />
     <Property Name="Injury_Date" Type="datetime" Nullable="false" />
-    <Property Name="Claim_Number" Type="int" Nullable="false" />
+    <Property Name="Claim_Number" Type="int" />
     <Property Name="Injury_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="Body_Parts" Type="nvarchar" MaxLength="50" />
     <Property Name="Job_Class" Type="nvarchar" MaxLength="50" />
-    <Property Name="Tx_Date" Type="datetime" Nullable="false" />
-    <Property Name="EROI_Date" Type="datetime" Nullable="false" />
-    <Property Name="Tx_EROI_LAG" Type="int" Nullable="false" />
+    <Property Name="Tx_Date" Type="datetime" />
+    <Property Name="EROI_Date" Type="datetime" />
+    <Property Name="Tx_EROI_LAG" Type="int" />
     <Property Name="Claim_Ruling_TypeID" Type="int" Nullable="false" />
     <Property Name="Claim_Ruling_Date" Type="datetime" />
     <Property Name="TTD_ONSET_Date" Type="nvarchar" MaxLength="50" />

@@ -18,6 +18,9 @@
             @Html.DisplayNameFor(model => model.Division_District)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.WC_TypeID)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Injury_Date)
         </th>
         <th>
@@ -27,7 +30,7 @@
             @Html.DisplayNameFor(model => model.Body_Parts)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Job_Class)
+            @Html.DisplayNameFor(model => model.Claim_Ruling_TypeID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Comments)
@@ -36,34 +39,37 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Org_Number)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Division_District)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Injury_Date)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Injury_Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Body_Parts)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Job_Class)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comments)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Org_Number)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Division_District)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.WC_TypeID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Injury_Date)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Injury_Type)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Body_Parts)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Claim_Ruling_TypeID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Comments)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+    </td>
+</tr>
 }
 
 </table>

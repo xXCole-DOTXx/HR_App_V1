@@ -20,13 +20,13 @@ namespace HR_App_V1.Models
         public string Division_District { get; set; }
         public int WC_TypeID { get; set; }
         public System.DateTime Injury_Date { get; set; }
-        public int Claim_Number { get; set; }
+        public Nullable<int> Claim_Number { get; set; }
         public string Injury_Type { get; set; }
         public string Body_Parts { get; set; }
         public string Job_Class { get; set; }
-        public System.DateTime Tx_Date { get; set; }
-        public System.DateTime EROI_Date { get; set; }
-        public int Tx_EROI_LAG { get; set; }
+        public Nullable<System.DateTime> Tx_Date { get; set; }
+        public Nullable<System.DateTime> EROI_Date { get; set; }
+        public Nullable<int> Tx_EROI_LAG { get; set; }
         public int Claim_Ruling_TypeID { get; set; }
         public Nullable<System.DateTime> Claim_Ruling_Date { get; set; }
         public string TTD_ONSET_Date { get; set; }

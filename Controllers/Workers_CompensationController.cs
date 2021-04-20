@@ -69,10 +69,12 @@ namespace HR_App_V1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,EmployeeID,Org_Number,Division_District,WC_TypeID,Injury_Date,Claim_Number,Injury_Type,Body_Parts,Comments")] Workers_Compensation workers_Compensation)
+        public ActionResult Create([Bind(Include = "ID,EmployeeID,Org_Number,Division_District,WC_TypeID,Injury_Date,Claim_Number,Injury_Type,Body_Parts,Claim_Ruling_TypeID,Comments")] Workers_Compensation workers_Compensation)
         {
             if (ModelState.IsValid)
             {
+                System.Diagnostics.Debug.WriteLine("WC Type: " + workers_Compensation.WC_TypeID);
+                System.Diagnostics.Debug.WriteLine("Claim ruling type: " + workers_Compensation.Claim_Ruling_TypeID);
                 db.Workers_Compensation.Add(workers_Compensation);
                 db.SaveChanges();
                 return RedirectToAction("Index");

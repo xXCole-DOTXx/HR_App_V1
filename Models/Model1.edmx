@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Human_ResourcesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Human_ResourcesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Claim_Ruling_Type">
           <Key>
             <PropertyRef Name="ID" />
@@ -97,13 +97,13 @@
           <Property Name="Division/District" Type="nvarchar" MaxLength="25" />
           <Property Name="WC_TypeID" Type="int" Nullable="false" />
           <Property Name="Injury_Date" Type="datetime" Nullable="false" />
-          <Property Name="Claim_Number" Type="int" Nullable="false" />
+          <Property Name="Claim_Number" Type="int" />
           <Property Name="Injury_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Body_Parts" Type="nvarchar" MaxLength="50" />
           <Property Name="Job_Class" Type="nvarchar" MaxLength="50" />
-          <Property Name="Tx_Date" Type="datetime" Nullable="false" />
-          <Property Name="EROI_Date" Type="datetime" Nullable="false" />
-          <Property Name="Tx_EROI_LAG" Type="int" Nullable="false" />
+          <Property Name="Tx_Date" Type="datetime" />
+          <Property Name="EROI_Date" Type="datetime" />
+          <Property Name="Tx_EROI_LAG" Type="int" />
           <Property Name="Claim_Ruling_TypeID" Type="int" Nullable="false" />
           <Property Name="Claim_Ruling_Date" Type="datetime" />
           <Property Name="TTD_ONSET_Date" Type="nvarchar" MaxLength="50" />
@@ -261,8 +261,7 @@
             <End Role="Workers_Compensation" EntitySet="Workers_Compensation" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Human_ResourcesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -371,13 +370,13 @@
           <Property Name="Division_District" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
           <Property Name="WC_TypeID" Type="Int32" Nullable="false" />
           <Property Name="Injury_Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Claim_Number" Type="Int32" Nullable="false" />
+          <Property Name="Claim_Number" Type="Int32" />
           <Property Name="Injury_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Body_Parts" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Job_Class" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Tx_Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="EROI_Date" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Tx_EROI_LAG" Type="Int32" Nullable="false" />
+          <Property Name="Tx_Date" Type="DateTime" Precision="3" />
+          <Property Name="EROI_Date" Type="DateTime" Precision="3" />
+          <Property Name="Tx_EROI_LAG" Type="Int32" />
           <Property Name="Claim_Ruling_TypeID" Type="Int32" Nullable="false" />
           <Property Name="Claim_Ruling_Date" Type="DateTime" Precision="3" />
           <Property Name="TTD_ONSET_Date" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
