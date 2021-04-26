@@ -44,6 +44,7 @@ namespace HR_App_V1.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
+            //System.Diagnostics.Debug.WriteLine("Page from: " + pageFrom);
             return View();
         }
 

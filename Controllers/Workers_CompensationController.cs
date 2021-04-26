@@ -45,7 +45,7 @@ namespace HR_App_V1.Controllers
         // GET: Workers_Compensation/Create
         public ActionResult Create(int? id)
         {
-
+            System.Diagnostics.Debug.WriteLine("Employee full name: " + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -55,11 +55,11 @@ namespace HR_App_V1.Controllers
             {
                 return HttpNotFound();
             }
-            System.Diagnostics.Debug.WriteLine("Employee name: " + employee.First_Name);
+            string fullName = employee.First_Name + " " + employee.Last_Name;
+            System.Diagnostics.Debug.WriteLine("Employee full name: " + fullName);
             ViewBag.Claim_Ruling_TypeID = new SelectList(db.Claim_Ruling_Type, "ID", "Claim_Ruling_Type1");
             ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "ID");
-            ViewBag.fName = new SelectList(db.Employees, "First_Name", "First_Name");
-            ViewBag.lName = new SelectList(db.Employees, "Last_Name", "Last_Name");
+            ViewBag.Name = fullName;
             ViewBag.WC_TypeID = new SelectList(db.WC_Type, "ID", "WC_Type1");
             return View();
         }
