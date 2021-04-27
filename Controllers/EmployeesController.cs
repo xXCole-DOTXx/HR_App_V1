@@ -20,12 +20,6 @@ namespace HR_App_V1.Controllers
             return View(db.Employees.ToList());
         }
 
-        // GET: Employees
-        public ActionResult EmployeeSelect()
-        {
-            return View(db.Employees.ToList());
-        }
-
         // GET: Employees/Details/5
         public ActionResult Details(int? id)
         {
@@ -42,9 +36,14 @@ namespace HR_App_V1.Controllers
         }
 
         // GET: Employees/Create
-        public ActionResult Create()
+        public ActionResult Create(int? from)
         {
-            //System.Diagnostics.Debug.WriteLine("Page from: " + pageFrom);
+            
+            if (from == 1)
+            {
+                ViewBag.RedirectTo = 1;
+            }
+            
             return View();
         }
 
@@ -53,12 +52,16 @@ namespace HR_App_V1.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,First_Name,Last_Name")] Employee employee)
+        public ActionResult Create([Bind(Include = "ID,First_Name,Last_Name")] Employee employee, int? RedirectTo)
         {
             if (ModelState.IsValid)
             {
                 db.Employees.Add(employee);
                 db.SaveChanges();
+                if(RedirectTo == 1)
+                {
+                    return RedirectToAction("EmployeeSelect", "Workers_Compensation");
+                }
                 return RedirectToAction("Index");
             }
 
