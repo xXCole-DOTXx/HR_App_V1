@@ -45,7 +45,7 @@ namespace HR_App_V1.Controllers
         // GET: Workers_Compensation/Create
         public ActionResult Create(int? id)
         {
-            System.Diagnostics.Debug.WriteLine("Employee full name: " + id);
+            System.Diagnostics.Debug.WriteLine("Employee ID was: " + id);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -58,7 +58,7 @@ namespace HR_App_V1.Controllers
             string fullName = employee.First_Name + " " + employee.Last_Name;
             System.Diagnostics.Debug.WriteLine("Employee full name: " + fullName);
             ViewBag.Claim_Ruling_TypeID = new SelectList(db.Claim_Ruling_Type, "ID", "Claim_Ruling_Type1");
-            ViewBag.EmployeeID = new SelectList(db.Employees, "ID", "ID");
+            ViewBag.EmployeeID = id;
             ViewBag.Name = fullName;
             ViewBag.WC_TypeID = new SelectList(db.WC_Type, "ID", "WC_Type1");
             return View();
