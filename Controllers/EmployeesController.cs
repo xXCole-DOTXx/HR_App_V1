@@ -58,9 +58,12 @@ namespace HR_App_V1.Controllers
             {
                 db.Employees.Add(employee);
                 db.SaveChanges();
+                //If the page you came from was creating a new Injury form
                 if(RedirectTo == 1)
                 {
-                    return RedirectToAction("EmployeeSelect", "Workers_Compensation");
+                    //Get the ID of the Employee you just created so you can pass it to the Injury Form Create page
+                    int? intIdt = db.Employees.Max(u => (int?)u.ID);
+                    return RedirectToAction("Create", "Workers_Compensation", new { id = intIdt });
                 }
                 return RedirectToAction("Index");
             }
