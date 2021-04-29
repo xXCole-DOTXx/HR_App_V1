@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HR_App_V1.Models;
+using PagedList;
 
 namespace HR_App_V1.Controllers
 {
@@ -15,9 +16,50 @@ namespace HR_App_V1.Controllers
         private Human_ResourcesEntities db = new Human_ResourcesEntities();
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string searchString, string currentFilter, int? page)
         {
-            return View(db.Employees.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.lNameSortParm = String.IsNullOrEmpty(sortOrder) ? "lname_desc" : "";
+            ViewBag.fNameSortParm = sortOrder == "fName" ? "fName_desc" : "fName";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var employees = from e in db.Employees
+                           select e;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                employees = employees.Where(s => s.Last_Name.Contains(searchString)
+                                       || s.First_Name.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "lname_desc":
+                    employees = employees.OrderByDescending(e => e.Last_Name);
+                    break;
+                case "fName":
+                    employees = employees.OrderBy(e => e.First_Name);
+                    break;
+                case "fName_desc":
+                    employees = employees.OrderByDescending(e => e.First_Name);
+                    break;
+                default:
+                    employees = employees.OrderBy(e => e.Last_Name);
+                    break;
+            }
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(employees.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Employees/Details/5

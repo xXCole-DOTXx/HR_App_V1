@@ -81,3 +81,7 @@ C:\Users\e096752\Documents\Cole's Git Repos\HR_App_V1\obj\Debug\HR_App_V1.csproj
 C:\Users\e096752\Documents\Cole's Git Repos\HR_App_V1\obj\Debug\HR_App_V1.csproj.CopyComplete
 C:\Users\e096752\Documents\Cole's Git Repos\HR_App_V1\obj\Debug\HR_App_V1.dll
 C:\Users\e096752\Documents\Cole's Git Repos\HR_App_V1\obj\Debug\HR_App_V1.pdb
+C:\Users\e096752\Documents\Cole's Git Repos\HR_App_V1\bin\PagedList.dll
+C:\Users\e096752\Documents\Cole's Git Repos\HR_App_V1\bin\PagedList.Mvc.dll
+C:\Users\e096752\Documents\Cole's Git Repos\HR_App_V1\bin\PagedList.xml
+C:\Users\e096752\Documents\Cole's Git Repos\HR_App_V1\bin\PagedList.Mvc.xml
