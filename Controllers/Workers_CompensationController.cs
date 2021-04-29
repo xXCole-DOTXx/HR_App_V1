@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HR_App_V1.Models;
+using PagedList;
 
 namespace HR_App_V1.Controllers
 {
@@ -15,16 +16,101 @@ namespace HR_App_V1.Controllers
         private Human_ResourcesEntities db = new Human_ResourcesEntities();
 
         // GET: Workers_Compensation
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? page)
         {
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.EmployeeSort = String.IsNullOrEmpty(sortOrder) ? "emp_desc" : ""; //Dont even use this one 
+            ViewBag.OrgSortParm = sortOrder ==  "org" ? "org_desc" : "org";
+            ViewBag.DivSortParm = sortOrder == "Div" ? "div_desc" : "div";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
             var workers_Compensation = db.Workers_Compensation.Include(w => w.Claim_Ruling_Type).Include(w => w.Employee).Include(w => w.WC_Type);
-            return View(workers_Compensation.ToList());
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                workers_Compensation = workers_Compensation.Where(s => s.Org_Number.ToString().Contains(searchString)
+                                       || s.Division_District.Contains(searchString));
+
+            }
+            switch (sortOrder)
+            {
+                case "org":
+                    workers_Compensation = workers_Compensation.OrderBy(s => s.Org_Number);
+                    break;
+                case "org_desc":
+                    workers_Compensation = workers_Compensation.OrderByDescending(s => s.Org_Number);
+                    break;
+                case "div":
+                    workers_Compensation = workers_Compensation.OrderBy(s => s.Division_District);
+                    break;
+                case "div_desc":
+                    workers_Compensation = workers_Compensation.OrderByDescending(s => s.Division_District);
+                    break;
+                default:
+                    workers_Compensation = workers_Compensation.OrderBy(s => s.EmployeeID);
+                    break;
+            }
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(workers_Compensation.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Employees
-        public ActionResult EmployeeSelect()
+        public ActionResult EmployeeSelect(string sortOrder, string currentFilter, string searchString, int? page)
         {
-            return View(db.Employees.ToList());
+            ViewBag.CurrentSort = sortOrder;
+            ViewBag.lNameSortParm = String.IsNullOrEmpty(sortOrder) ? "lName_desc" : ""; 
+            ViewBag.fNameSortParm = sortOrder == "fName" ? "fName_desc" : "fName";
+
+            if (searchString != null)
+            {
+                page = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            ViewBag.CurrentFilter = searchString;
+
+            var employees = from s in db.Employees
+                           select s;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                employees = employees.Where(s => s.Last_Name.Contains(searchString)
+                                       || s.First_Name.Contains(searchString));
+            }
+
+            switch (sortOrder)
+            {
+                case "lname_desc":
+                    employees = employees.OrderByDescending(e => e.Last_Name);
+                    break;
+                case "fName":
+                    employees = employees.OrderBy(e => e.First_Name);
+                    break;
+                case "fName_desc":
+                    employees = employees.OrderByDescending(e => e.First_Name);
+                    break;
+                default:  
+                    employees = employees.OrderBy(e => e.Last_Name);
+                    break;
+            }
+
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            return View(employees.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Workers_Compensation/Details/5

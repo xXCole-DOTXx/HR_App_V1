@@ -1,4 +1,6 @@
-﻿@model IEnumerable<HR_App_V1.Models.Workers_Compensation>
+﻿@model PagedList.IPagedList<HR_App_V1.Models.Workers_Compensation>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 
 @{
     ViewBag.Title = "Index";
@@ -9,67 +11,81 @@
 <p>
     @Html.ActionLink("Create New", "EmployeeSelect")
 </p>
+
+@using (Html.BeginForm("Index", "Workers_Compensation", FormMethod.Get))
+{
+    <p>
+        Find by Org # or Division/District: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Search" />
+    </p>
+}
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Org_Number)
+            @Html.ActionLink("Organization Number", "Index", new { sortOrder = ViewBag.OrgSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Division_District)
+            @Html.ActionLink("Division/District", "Index", new { sortOrder = ViewBag.DivSortParm, currentFilter = ViewBag.CurrentFilter })
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.WC_TypeID)
+            WC Type ID
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Injury_Date)
+            Injury Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Injury_Type)
+            Injury Type
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Body_Parts)
+            Body Parts
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Claim_Ruling_TypeID)
+            Claim Ruling Type ID
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Comments)
+            Comments
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Org_Number)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Division_District)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.WC_TypeID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Injury_Date)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Injury_Type)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Body_Parts)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Claim_Ruling_TypeID)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Comments)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-        @Html.ActionLink("Upgrade to Workers Comp", "Details", new { id = item.ID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Org_Number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Division_District)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WC_TypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Injury_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Injury_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body_Parts)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Claim_Ruling_TypeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comments)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Upgrade to Workers Comp", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
 
 </table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
