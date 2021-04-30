@@ -1,0 +1,201 @@
+﻿@model IEnumerable<HR_App_V1.Models.Workers_Compensation>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Org_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Division_District)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Injury_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Claim_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Injury_Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Body_Parts)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Job_Class)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tx_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EROI_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tx_EROI_LAG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Claim_Ruling_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TTD_ONSET_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Restricted_RTW)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Full_Duty_RTW)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TTD_Award_Notice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RTW_Notice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lost_Time)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Lost_Time_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MVA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.H_EQ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tree_Brush)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CTS)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OD_NOC)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Claim_Ruling_Type.Claim_Ruling_Type1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WC_Type.WC_Type1)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Org_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Division_District)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Injury_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Claim_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Injury_Type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Body_Parts)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Job_Class)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tx_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EROI_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tx_EROI_LAG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Claim_Ruling_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TTD_ONSET_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Restricted_RTW)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Full_Duty_RTW)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TTD_Award_Notice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RTW_Notice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lost_Time)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lost_Time_Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MVA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.H_EQ)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tree_Brush)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CTS)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HL)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OD_NOC)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Claim_Ruling_Type.Claim_Ruling_Type1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WC_Type.WC_Type1)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

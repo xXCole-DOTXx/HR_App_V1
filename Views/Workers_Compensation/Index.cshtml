@@ -77,7 +77,7 @@
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Upgrade to Workers Comp", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Upgrade to Workers Comp", "Create", "Workers_Compensation_Upgrade", new { id = item.ID, orgNum = item.Org_Number, Div = item.Division_District, wcType = item.WC_TypeID, injuryDate = item.Injury_Date, injuryType = item.Injury_Type, bodyParts = item.Body_Parts, claim = item.Claim_Ruling_TypeID, comments = item.Comments }, null) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.ID })
             </td>
         </tr>

@@ -137,6 +137,7 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Workers_CompensationController.cs" />
+    <Compile Include="Controllers\Workers_Compensation_UpgradeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -252,6 +253,11 @@
     <Content Include="Views\Workers_Compensation\EmployeeSelect.cshtml" />
     <Content Include="Views\Workers_Compensation\Create.cshtml" />
     <Content Include="Views\Workers_Compensation\CreateWorkersComp.cshtml" />
+    <Content Include="Views\Workers_Compensation_Upgrade\Create.cshtml" />
+    <Content Include="Views\Workers_Compensation_Upgrade\Delete.cshtml" />
+    <Content Include="Views\Workers_Compensation_Upgrade\Details.cshtml" />
+    <Content Include="Views\Workers_Compensation_Upgrade\Edit.cshtml" />
+    <Content Include="Views\Workers_Compensation_Upgrade\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
