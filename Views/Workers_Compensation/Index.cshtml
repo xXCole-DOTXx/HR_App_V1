@@ -19,73 +19,129 @@
         <input type="submit" value="Search" />
     </p>
 }
-<table class="table">
-    <tr>
-        <th>
-            @Html.ActionLink("Organization Number", "Index", new { sortOrder = ViewBag.OrgSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th>
-            @Html.ActionLink("Division/District", "Index", new { sortOrder = ViewBag.DivSortParm, currentFilter = ViewBag.CurrentFilter })
-        </th>
-        <th>
-            WC Type ID
-        </th>
-        <th>
-            Injury Date
-        </th>
-        <th>
-            Injury Type
-        </th>
-        <th>
-            Body Parts
-        </th>
-        <th>
-            Claim Ruling Type ID
-        </th>
-        <th>
-            Comments
-        </th>
-        <th></th>
-    </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Org_Number)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Division_District)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WC_TypeID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Injury_Date)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Injury_Type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Body_Parts)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Claim_Ruling_TypeID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comments)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Upgrade to Workers Comp", "Create", "Workers_Compensation_Upgrade", new { id = item.ID, orgNum = item.Org_Number, Div = item.Division_District, wcType = item.WC_TypeID, injuryDate = item.Injury_Date, injuryType = item.Injury_Type, bodyParts = item.Body_Parts, claim = item.Claim_Ruling_TypeID, comments = item.Comments }, null) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model)
+{
+<div class="row">
+    <div class="col-md-4" style="margin: 10px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 25px;
+        border: 2px solid #000000;
+        background: #c7c0c0;
+        padding: 10px;
+        width: 50%;
+        height: 300px;
+    ">
+        <h2>@Html.DisplayFor(modelItem => item.ID)</h2>
 
-</table>
-<br />
-Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+        <div class="row">
+            <div class="col-md-4">
+                <b>Organization Number:</b>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Org_Number)
+                </p>
+            </div>
 
-@Html.PagedListPager(Model, page => Url.Action("Index",
-    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+            <div class="col-md-4">
+                <b>Division/District:</b>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Division_District)
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <b>WC Type ID:</b>
+                <p>
+                    @Html.DisplayFor(modelItem => item.WC_TypeID)
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <b>Injury Date:</b>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Injury_Date)
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <b>Claim Number:</b>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Claim_Number)
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <b>Injury Type:</b>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Injury_Type)
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <b>Body Parts:</b>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Body_Parts)
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <b>Claim Ruling Type ID:</b>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Claim_Ruling_TypeID)
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <b>Comments:</b>
+                <p>
+                    @Html.DisplayFor(modelItem => item.Comments)
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <p>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <p>
+                    @Html.ActionLink("Upgrade to Workers Comp", "Create", "Workers_Compensation_Upgrade", new { id = item.ID, orgNum = item.Org_Number, Div = item.Division_District, wcType = item.WC_TypeID, injuryDate = item.Injury_Date, injuryType = item.Injury_Type, bodyParts = item.Body_Parts, claim = item.Claim_Ruling_TypeID, comments = item.Comments }, null)
+                </p>
+            </div>
+
+            <div class="col-md-4">
+                <p>
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </p>
+            </div>
+        </div>
+
+    </div>
+   
+</div>
+
+}
+
+
+
+
+
+
+
+
+
+
+        <br />
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Index",
+            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
