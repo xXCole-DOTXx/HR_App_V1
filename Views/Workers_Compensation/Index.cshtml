@@ -6,24 +6,31 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-4">
+        <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "EmployeeSelect")
-</p>
+        <p>
+            @Html.ActionLink("Create New", "EmployeeSelect")
+        </p>
 
-@using (Html.BeginForm("Index", "Workers_Compensation", FormMethod.Get))
-{
-    <p>
-        Find by Org # or Division/District: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
-        <input type="submit" value="Search" />
-    </p>
-}
+        @using (Html.BeginForm("Index", "Workers_Compensation", FormMethod.Get))
+        {
+            <p>
+                Find by Org # or Division/District: @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+                <input type="submit" value="Search" />
+            </p>
+        }
+    </div>
+</div>
 
 @foreach (var item in Model)
 {
 <div class="row">
-    <div class="col-md-4" style="margin: 10px;
+    <div class="col-md-3"></div>
+    <div class="col-md-4" style="
+        margin: 10px;
         display: block;
         margin-left: auto;
         margin-right: auto;
